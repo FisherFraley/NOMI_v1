@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: 'Nomi <onboarding@resend.dev>',
       to: TO_EMAIL,
       subject: `Early Access Request from ${firstName} ${lastName}`,
@@ -45,6 +45,12 @@ export async function POST(request: NextRequest) {
       `,
     })
 
+    if (error) {
+      console.error('Resend error:', error)
+      return NextResponse.json({ error: error.message }, { status: 500 })
+    }
+
+    console.log('Email sent successfully:', data)
     return NextResponse.json(
       { success: true, message: 'Form submitted successfully' },
       { status: 200 }
