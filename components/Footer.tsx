@@ -20,11 +20,17 @@ export default function Footer() {
     }
 
     try {
-      // TODO: Implement actual email submission
-      // For now, just simulate success
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      setMessage('Thank you for joining! We\'ll be in touch soon.')
-      setEmail('')
+      const response = await fetch('/api/email-signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      if (response.ok) {
+        setMessage("Thank you for joining! We'll be in touch soon.")
+        setEmail('')
+      } else {
+        setMessage('Something went wrong. Please try again.')
+      }
     } catch (error) {
       setMessage('Something went wrong. Please try again.')
     } finally {
