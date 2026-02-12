@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ProductOverview() {
   const handleCTAClick = () => {
@@ -16,16 +17,15 @@ export default function ProductOverview() {
     <section className="bg-dark text-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side: Laptop mockup placeholder */}
+          {/* Left side: Laptop mockup */}
           <div className="order-2 md:order-1">
-            <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700">
-              <div className="text-center">
-                <p className="text-gray-500 font-mono text-sm">Laptop Mockup</p>
-                <p className="text-gray-600 font-mono text-xs mt-2">
-                  (Nomi dashboard overlay on retail store)
-                </p>
-              </div>
-            </div>
+            <Image
+              src="/images/laptop-mockup.png"
+              alt="Nomi dashboard on a laptop in a retail setting"
+              width={800}
+              height={600}
+              className="w-full rounded-lg"
+            />
           </div>
 
           {/* Right side: Text content */}
