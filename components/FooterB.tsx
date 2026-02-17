@@ -41,16 +41,14 @@ export default function FooterB() {
   return (
     <footer
       className="py-20 px-6 relative overflow-hidden"
-      style={{
-        background: 'linear-gradient(180deg, #050505 0%, #07070e 30%, #0a0815 60%, #080510 100%)',
-      }}
+      style={{ background: '#111' }}
     >
-      {/* Aurora gradient top edge */}
+      {/* Soft aurora glow at top */}
       <div
         className="absolute top-0 left-0 right-0 pointer-events-none"
         style={{
-          height: '280px',
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.16) 0%, rgba(139,92,246,0.08) 40%, transparent 70%)',
+          height: '200px',
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.12) 0%, rgba(139,92,246,0.06) 40%, transparent 70%)',
           zIndex: 0,
         }}
       />
@@ -58,15 +56,11 @@ export default function FooterB() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Top section: CTA */}
         <div className="mb-16">
-          {/* Ghost gradient NOMI logotype */}
           <h2
             className="text-[12vw] md:text-[10vw] lg:text-[8vw] font-bold leading-none mb-8"
             style={{
               fontFamily: 'var(--font-bebas), sans-serif',
-              background: 'linear-gradient(135deg, rgba(99,102,241,0.40) 0%, rgba(139,92,246,0.25) 50%, rgba(248,248,248,0.08) 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              color: 'rgba(255,255,255,0.08)',
             }}
           >
             NOMI
@@ -80,17 +74,18 @@ export default function FooterB() {
           >
             JOIN THE MOVEMENT
           </h3>
-          <p className="text-lg mb-8" style={{ color: 'rgba(248, 248, 248, 0.60)' }}>
+          <p className="text-lg mb-8" style={{ color: 'rgba(255, 255, 255, 0.55)' }}>
             Sign up with your email address to request early access.
           </p>
 
           {/* Glass email form */}
           <form onSubmit={handleSubmit} className="max-w-md">
             <div
-              className="flex gap-1.5 p-1.5 rounded-xl"
+              className="flex gap-1.5 p-1.5"
               style={{
-                background: 'rgba(255, 255, 255, 0.04)',
+                background: 'rgba(255, 255, 255, 0.06)',
                 border: '1px solid rgba(255, 255, 255, 0.10)',
+                borderRadius: '100px',
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
               }}
@@ -101,7 +96,7 @@ export default function FooterB() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-3 bg-transparent text-[15px] outline-none"
+                className="flex-1 px-5 py-3 bg-transparent text-[15px] outline-none"
                 style={{
                   color: '#f8f8f8',
                   border: 'none',
@@ -110,28 +105,35 @@ export default function FooterB() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-gradient px-5 py-3 rounded-lg text-[13px] font-medium uppercase tracking-wider whitespace-nowrap disabled:opacity-50"
+                className="px-6 py-3 text-[13px] font-medium uppercase tracking-wider whitespace-nowrap disabled:opacity-50 transition-all"
+                style={{
+                  color: '#111',
+                  background: '#f8f8f8',
+                  borderRadius: '100px',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = '#e0e0e0')}
+                onMouseLeave={(e) => (e.currentTarget.style.background = '#f8f8f8')}
               >
                 {isSubmitting ? 'Joining...' : 'Join the Movement'}
               </button>
             </div>
             {message && (
-              <p className="mt-3 text-[13px]" style={{ color: 'rgba(248, 248, 248, 0.60)' }}>
+              <p className="mt-3 text-[13px]" style={{ color: 'rgba(255, 255, 255, 0.55)' }}>
                 {message}
               </p>
             )}
           </form>
 
-          <p className="text-[13px] mt-4" style={{ color: 'rgba(248, 248, 248, 0.30)' }}>
+          <p className="text-[13px] mt-4" style={{ color: 'rgba(255, 255, 255, 0.25)' }}>
             We respect your privacy.
           </p>
         </div>
 
-        {/* Gradient divider */}
+        {/* Divider */}
         <div
           style={{
             height: '1px',
-            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 20%, rgba(99,102,241,0.20) 50%, rgba(255,255,255,0.08) 80%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.08) 80%, transparent 100%)',
           }}
         />
 
@@ -140,7 +142,7 @@ export default function FooterB() {
           <div>
             <h4
               className="text-[11px] font-semibold uppercase mb-4"
-              style={{ letterSpacing: '0.12em', color: 'rgba(248, 248, 248, 0.35)' }}
+              style={{ letterSpacing: '0.12em', color: 'rgba(255, 255, 255, 0.30)' }}
             >
               SITEMAP
             </h4>
@@ -148,18 +150,18 @@ export default function FooterB() {
               <Link
                 href="/demo"
                 className="block text-sm transition-colors"
-                style={{ color: 'rgba(248, 248, 248, 0.55)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.90)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.55)')}
+                style={{ color: 'rgba(255, 255, 255, 0.50)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.50)')}
               >
                 DEMO
               </Link>
               <Link
                 href="/early-access"
                 className="block text-sm transition-colors"
-                style={{ color: 'rgba(248, 248, 248, 0.55)' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.90)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.55)')}
+                style={{ color: 'rgba(255, 255, 255, 0.50)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.50)')}
               >
                 EARLY ACCESS
               </Link>
@@ -169,7 +171,7 @@ export default function FooterB() {
           <div>
             <h4
               className="text-[11px] font-semibold uppercase mb-4"
-              style={{ letterSpacing: '0.12em', color: 'rgba(248, 248, 248, 0.35)' }}
+              style={{ letterSpacing: '0.12em', color: 'rgba(255, 255, 255, 0.30)' }}
             >
               FOLLOW
             </h4>
@@ -181,9 +183,9 @@ export default function FooterB() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-sm transition-colors"
-                  style={{ color: 'rgba(248, 248, 248, 0.55)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.90)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.55)')}
+                  style={{ color: 'rgba(255, 255, 255, 0.50)' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.50)')}
                 >
                   {social}
                 </a>

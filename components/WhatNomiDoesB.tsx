@@ -14,12 +14,7 @@ export default function WhatNomiDoesB() {
   }
 
   return (
-    <section
-      className="py-20 px-6"
-      style={{
-        background: 'linear-gradient(180deg, #050505 0%, #080810 50%, #050505 100%)',
-      }}
-    >
+    <section className="py-20 px-6" style={{ background: '#FAFAFA' }}>
       <div className="max-w-7xl mx-auto">
         {/* Section title with accent bar */}
         <div className="flex items-center gap-4 mb-16">
@@ -36,7 +31,7 @@ export default function WhatNomiDoesB() {
             className="text-5xl md:text-6xl lg:text-7xl font-bold uppercase"
             style={{
               fontFamily: 'var(--font-bebas), sans-serif',
-              color: '#f8f8f8',
+              color: '#111',
             }}
           >
             WHAT NOMI DOES
@@ -45,22 +40,32 @@ export default function WhatNomiDoesB() {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left column: Text content in glass card */}
-          <div className="glass-card p-10 space-y-8">
+          <div
+            className="p-10 space-y-8"
+            style={{
+              background: 'rgba(255, 255, 255, 0.65)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              border: '1px solid rgba(0, 0, 0, 0.06)',
+              borderRadius: '16px',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
+            }}
+          >
             <div>
-              <h3 className="text-xl font-semibold mb-3" style={{ color: '#f8f8f8' }}>
+              <h3 className="text-xl font-semibold mb-3" style={{ color: '#111' }}>
                 First-time shoppers don&apos;t convert.
               </h3>
-              <p className="text-[15px] leading-7" style={{ color: 'rgba(248, 248, 248, 0.55)' }}>
+              <p className="text-[15px] leading-7" style={{ color: 'rgba(0, 0, 0, 0.55)' }}>
                 New visitors arrive with no context, too many choices, and little guidance — leading
                 to hesitation, decision fatigue, and abandoned carts.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-3" style={{ color: '#f8f8f8' }}>
+              <h3 className="text-xl font-semibold mb-3" style={{ color: '#111' }}>
                 Nomi personalizes the first visit.
               </h3>
-              <p className="text-[15px] leading-7" style={{ color: 'rgba(248, 248, 248, 0.55)' }}>
+              <p className="text-[15px] leading-7" style={{ color: 'rgba(0, 0, 0, 0.55)' }}>
                 We surface relevant products and collections immediately, helping new shoppers find
                 what fits them — before they leave.
               </p>
@@ -81,7 +86,7 @@ export default function WhatNomiDoesB() {
                         display: 'inline-block',
                       }}
                     />
-                    <span className="text-[15px]" style={{ color: 'rgba(248, 248, 248, 0.65)' }}>
+                    <span className="text-[15px]" style={{ color: 'rgba(0, 0, 0, 0.60)' }}>
                       {item}
                     </span>
                   </li>
@@ -92,7 +97,13 @@ export default function WhatNomiDoesB() {
             <Link
               href="/early-access"
               onClick={handleCTAClick}
-              className="btn-gradient inline-block mt-6 px-7 py-3 rounded-lg text-sm font-medium uppercase tracking-wider"
+              className="inline-block mt-6 px-7 py-3 rounded-full text-sm font-medium uppercase tracking-wider transition-all"
+              style={{
+                color: '#fff',
+                background: '#111',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = '#333')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = '#111')}
             >
               Join our pilot program →
             </Link>
@@ -101,10 +112,11 @@ export default function WhatNomiDoesB() {
           {/* Right column: Mockup image */}
           <div className="flex items-start">
             <div
-              className="w-full overflow-hidden rounded-2xl"
+              className="w-full overflow-hidden"
               style={{
-                border: '1px solid rgba(255, 255, 255, 0.10)',
-                boxShadow: '0 8px 40px rgba(0,0,0,0.50)',
+                borderRadius: '16px',
+                border: '1px solid rgba(0, 0, 0, 0.06)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
               }}
             >
               <Image

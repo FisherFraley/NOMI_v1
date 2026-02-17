@@ -7,10 +7,10 @@ export default function NavbarB() {
     <nav
       className="sticky top-0 z-50"
       style={{
-        background: 'rgba(5, 5, 5, 0.72)',
+        background: 'rgba(250, 250, 250, 0.72)',
         backdropFilter: 'blur(20px) saturate(160%)',
         WebkitBackdropFilter: 'blur(20px) saturate(160%)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.07)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -21,7 +21,7 @@ export default function NavbarB() {
             className="text-3xl font-bold"
             style={{
               fontFamily: 'var(--font-bebas), sans-serif',
-              color: '#f8f8f8',
+              color: '#111',
               letterSpacing: '0.08em',
             }}
           >
@@ -33,36 +33,33 @@ export default function NavbarB() {
             <Link
               href="/early-access"
               className="text-[13px] font-medium uppercase tracking-wider transition-colors"
-              style={{ color: 'rgba(248, 248, 248, 0.60)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.95)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.60)')}
+              style={{ color: 'rgba(0, 0, 0, 0.50)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(0, 0, 0, 0.85)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(0, 0, 0, 0.50)')}
             >
               EARLY ACCESS
             </Link>
             <Link
               href="/demo"
               className="text-[13px] font-medium uppercase tracking-wider transition-colors"
-              style={{ color: 'rgba(248, 248, 248, 0.60)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.95)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(248, 248, 248, 0.60)')}
+              style={{ color: 'rgba(0, 0, 0, 0.50)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(0, 0, 0, 0.85)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(0, 0, 0, 0.50)')}
             >
               DEMO
             </Link>
             <Link
               href="/early-access"
-              className="px-[18px] py-2 text-[13px] font-medium uppercase tracking-wider rounded-md transition-all"
+              className="px-[18px] py-2 text-[13px] font-medium uppercase tracking-wider rounded-full transition-all"
               style={{
-                color: '#f8f8f8',
-                border: '1px solid rgba(99, 102, 241, 0.60)',
-                boxShadow: '0 0 12px rgba(99,102,241,0.15)',
+                color: '#fff',
+                background: '#111',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 0 20px rgba(99,102,241,0.35)'
-                e.currentTarget.style.background = 'rgba(99, 102, 241, 0.10)'
+                e.currentTarget.style.background = '#333'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 0 12px rgba(99,102,241,0.15)'
-                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.background = '#111'
               }}
             >
               Request Early Access

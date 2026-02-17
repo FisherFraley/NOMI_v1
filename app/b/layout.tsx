@@ -6,7 +6,7 @@ export default function VersionBLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ background: '#050505', minHeight: '100vh' }}>
+    <div style={{ background: '#FAFAFA', minHeight: '100vh' }}>
       <NavbarB />
       {children}
     </div>

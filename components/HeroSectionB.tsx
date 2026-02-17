@@ -12,31 +12,28 @@ export default function HeroSectionB() {
   return (
     <section
       className="min-h-[90vh] flex items-center justify-center px-6 py-20 relative overflow-hidden"
-      style={{ background: '#050505' }}
+      style={{ background: '#FAFAFA' }}
     >
-      {/* Primary glow orb */}
+      {/* Soft gradient orbs */}
       <div
         className="absolute pointer-events-none"
         style={{
-          top: '-20%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '900px',
-          height: '700px',
-          background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.22) 0%, rgba(139,92,246,0.10) 35%, transparent 70%)',
-          filter: 'blur(2px)',
+          top: '-15%',
+          left: '30%',
+          width: '800px',
+          height: '600px',
+          background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.08) 0%, rgba(99,102,241,0.04) 40%, transparent 70%)',
           zIndex: 0,
         }}
       />
-      {/* Secondary glow orb */}
       <div
         className="absolute pointer-events-none"
         style={{
           bottom: '-10%',
-          right: '-5%',
-          width: '500px',
-          height: '400px',
-          background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.12) 0%, transparent 65%)',
+          right: '10%',
+          width: '600px',
+          height: '500px',
+          background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.06) 0%, transparent 60%)',
           zIndex: 0,
         }}
       />
@@ -48,8 +45,7 @@ export default function HeroSectionB() {
           className="text-[20vw] md:text-[18vw] lg:text-[16vw] font-bold leading-none tracking-wider mb-12"
           style={{
             fontFamily: 'var(--font-bebas), sans-serif',
-            color: '#f8f8f8',
-            textShadow: '0 0 120px rgba(99,102,241,0.30), 0 0 40px rgba(99,102,241,0.15)',
+            color: '#111',
           }}
         >
           NOMI
@@ -61,7 +57,7 @@ export default function HeroSectionB() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase leading-tight"
             style={{
               fontFamily: 'var(--font-bebas), sans-serif',
-              color: '#f8f8f8',
+              color: '#111',
             }}
           >
             INCREASE FIRST-VISIT CONVERSION.
