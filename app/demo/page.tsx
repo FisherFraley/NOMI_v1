@@ -49,9 +49,6 @@ export default function DemoPage() {
             Your browser does not support the video tag.
           </video>
 
-          <p className="text-sm font-mono text-gray-600 italic mt-4">
-            &quot;The shopper shows interest in a gray sweatshirt.&quot;
-          </p>
         </div>
 
         {/* CTA section */}
