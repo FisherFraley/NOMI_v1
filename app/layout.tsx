@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { PHProvider } from "./providers";
-import Navbar from "@/components/Navbar";
+import NavWrapper from "@/components/NavWrapper";
 import { Bebas_Neue, Inter, JetBrains_Mono } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${bebasNeue.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}>
         <PHProvider>
-          <Navbar />
+          <NavWrapper />
           {children}
         </PHProvider>
       </body>
